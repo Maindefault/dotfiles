@@ -1,0 +1,48 @@
+{
+  "plugins": {
+    "LuaSnip": {
+      "rev": "21e9fec",
+      "src": "https://github.com/L3MON4D3/LuaSnip.git"
+    },
+    "cmp-buffer": {
+      "rev": "b74fab3",
+      "src": "https://github.com/hrsh7th/cmp-buffer.git"
+    },
+    "cmp-nvim-lsp": {
+      "rev": "bd5a7d6",
+      "src": "https://github.com/hrsh7th/cmp-nvim-lsp.git"
+    },
+    "cmp_luasnip": {
+      "rev": "98d9cb5",
+      "src": "https://github.com/saadparwaiz1/cmp_luasnip.git"
+    },
+    "fzf-lua": {
+      "rev": "ed0e0ea",
+      "src": "https://github.com/ibhagwan/fzf-lua.git"
+    },
+    "kanagawa.nvim": {
+      "rev": "27f1e11",
+      "src": "https://github.com/rebelot/kanagawa.nvim.git"
+    },
+    "mason-lspconfig.nvim": {
+      "rev": "47059d7",
+      "src": "https://github.com/mason-org/mason-lspconfig.nvim.git"
+    },
+    "mason.nvim": {
+      "rev": "2a6940a",
+      "src": "https://github.com/mason-org/mason.nvim.git"
+    },
+    "nvim-cmp": {
+      "rev": "b5311ab",
+      "src": "https://github.com/hrsh7th/nvim-cmp.git"
+    },
+    "nvim-lspconfig": {
+      "rev": "292f444",
+      "src": "https://github.com/neovim/nvim-lspconfig.git"
+    },
+    "nvim-treesitter": {
+      "rev": "e289100f",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    }
+  }
+}

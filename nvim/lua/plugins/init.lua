@@ -1,0 +1,19 @@
+vim.pack.add({
+  "https://github.com/rebelot/kanagawa.nvim.git",
+  "https://github.com/hrsh7th/nvim-cmp.git",
+  "https://github.com/hrsh7th/cmp-nvim-lsp.git",
+  "https://github.com/hrsh7th/cmp-buffer.git",
+  "https://github.com/L3MON4D3/LuaSnip.git",
+  "https://github.com/saadparwaiz1/cmp_luasnip.git",
+  "https://github.com/neovim/nvim-lspconfig.git",
+  "https://github.com/mason-org/mason.nvim.git",
+  "https://github.com/mason-org/mason-lspconfig.nvim.git",
+	"https://github.com/ibhagwan/fzf-lua.git",
+  "https://github.com/nvim-treesitter/nvim-treesitter.git",
+})
+
+require("plugins.kanagawa")
+require("plugins.cmp")
+require("plugins.lsp")
+require("plugins.fzf")
+require("plugins.treesitter")
