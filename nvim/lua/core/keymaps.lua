@@ -1,3 +1,10 @@
+-- Paste from system clipboard in Neovide
+if vim.g.neovide then
+    vim.keymap.set({ "i", "c" }, "<C-v>", "<C-r>+", {
+        desc = "Paste from system clipboard",
+    })
+end
+
 local map = vim.keymap.set
 
 -- Search

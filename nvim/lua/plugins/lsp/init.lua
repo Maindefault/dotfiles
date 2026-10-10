@@ -1,18 +1,39 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local function on_attach(_, bufnr)
-  local opts = { buffer = bufnr, silent = true }
+    local function map(lhs, rhs, desc)
+        vim.keymap.set("n", lhs, rhs, {
+            buffer = bufnr,
+            silent = true,
+            desc = desc,
+        })
+    end
 
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-  vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-  vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-  vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
-  vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-  vim.keymap.set("n", "<leader>cf", function()
-    vim.lsp.buf.format({ async = true, bufnr = bufnr })
-end, opts)
+    map("gd", function()
+    require("fzf-lua").lsp_definitions()
+    end, "LSP: Go to definition")    
+    map("gD", function()
+    require("fzf-lua").lsp_declarations()
+    end, "LSP: Go to declaration")
+    map("gi", function()
+    require("fzf-lua").lsp_implementations()
+    end, "LSP: Go to implementation")
+    map("K", vim.lsp.buf.hover, "LSP: Hover documentation")
+    map("<leader>cs", function()
+    require("fzf-lua").lsp_references()
+    end, "LSP: Find references")
+
+    map("<leader>cr", vim.lsp.buf.rename, "LSP: Rename symbol")
+    map("<leader>ca", function()
+    require("fzf-lua").lsp_code_actions()
+    end, "LSP: Code action")
+
+    map("<leader>cf", function()
+        vim.lsp.buf.format({
+            async = false,
+            bufnr = bufnr,
+        })
+    end, "LSP: Format buffer")
 end
 
 vim.lsp.config("*", {

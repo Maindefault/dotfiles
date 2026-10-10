@@ -31,7 +31,7 @@ opt.splitbelow = true
 
 -- Editing
 opt.undofile = true
-opt.mouse = "a"
+opt.mouse = ""
 opt.confirm = true
 
 -- Clipboard
