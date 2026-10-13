@@ -18,7 +18,13 @@ local function on_attach(_, bufnr)
     map("gi", function()
     require("fzf-lua").lsp_implementations()
     end, "LSP: Go to implementation")
-    map("K", vim.lsp.buf.hover, "LSP: Hover documentation")
+    map("K", function()
+        vim.lsp.buf.hover({
+            border = "rounded",
+            max_width = 80,
+            max_height = 20,
+        })
+    end, "LSP: Hover documentation")    
     map("<leader>cs", function()
     require("fzf-lua").lsp_references()
     end, "LSP: Find references")
